@@ -11,7 +11,7 @@ class Solution:
             if complement in seen:
                 return [seen[complement], i]
             seen[num] = i
-        return []
+        return [], "No two numbers found that add up to the target."
 
 
 class TestSolution:
