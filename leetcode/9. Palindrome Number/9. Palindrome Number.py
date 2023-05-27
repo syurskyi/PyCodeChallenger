@@ -1,4 +1,4 @@
-class Solution:
+class PalindromeChecker:
     @staticmethod
     def isPalindrome(num: int) -> bool:
         if num < 0 or (num % 10 == 0 and num != 0):
@@ -14,7 +14,7 @@ class Solution:
         return original_x == reversed_num
 
 
-class TestSolution:
+class TestPalindromeChecker:
     @staticmethod
     def run_tests():
         test_cases = [
@@ -26,7 +26,7 @@ class TestSolution:
         ]
 
         for num, expected in test_cases:
-            result = Solution.isPalindrome(num)
+            result = PalindromeChecker.isPalindrome(num)
             assert result == expected, f"Expected: {expected}, Got: {result}"
             print(f"Input: num={num}")
             print("Result:", result)
@@ -38,4 +38,4 @@ class TestSolution:
 
 
 if __name__ == "__main__":
-    TestSolution.run_tests()
+    TestPalindromeChecker.run_tests()

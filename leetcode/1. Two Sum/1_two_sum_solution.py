@@ -2,19 +2,19 @@ from typing import List
 from collections import defaultdict
 
 
-class Solution:
+class TwoSumFinder:
     @staticmethod
     def twoSum(nums: List[int], target: int) -> List[int]:
         seen = defaultdict(int)
-        for i, num in enumerate(nums):
+        for index, num in enumerate(nums):
             complement = target - num
             if complement in seen:
-                return [seen[complement], i]
-            seen[num] = i
+                return [seen[complement], index]
+            seen[num] = index
         return [], "No two numbers found that add up to the target."
 
 
-class TestSolution:
+class TestTwoSumFinder:
     @staticmethod
     def run_tests():
         test_cases = [
@@ -24,9 +24,9 @@ class TestSolution:
         ]
 
         for nums, target, expected in test_cases:
-            result = Solution.twoSum(nums, target)
+            result = TwoSumFinder.twoSum(nums, target)
             assert result == expected, f"Expected: {expected}, Got: {result}"
-            result = Solution.twoSum(nums, target)
+            result = TwoSumFinder.twoSum(nums, target)
             print(f"Input: nums={nums}, target={target}")
             print("Result:", result)
             print("Expected output:", expected)
@@ -37,4 +37,4 @@ class TestSolution:
 
 
 if __name__ == "__main__":
-    TestSolution.run_tests()
+    TestTwoSumFinder.run_tests()
