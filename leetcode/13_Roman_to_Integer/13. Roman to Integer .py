@@ -1,4 +1,4 @@
-class RomanToIntConverter:
+class Solution:
     @staticmethod
     def romanToInt(roman_numeral: str) -> int:
         roman_to_int = {
@@ -23,7 +23,7 @@ class RomanToIntConverter:
         return result
 
 
-class TestRomanToIntConverter:
+class TestSolution:
     @staticmethod
     def run_tests():
         test_cases = [
@@ -33,7 +33,7 @@ class TestRomanToIntConverter:
         ]
 
         for roman_numeral, expected in test_cases:
-            result = RomanToIntConverter.romanToInt(roman_numeral)
+            result = Solution.romanToInt(roman_numeral)
             assert result == expected, f"Expected: {expected}, Got: {result}"
             print(f"Input: roman_numeral={roman_numeral}")
             print("Result:", result)
@@ -45,4 +45,4 @@ class TestRomanToIntConverter:
 
 
 if __name__ == "__main__":
-    TestRomanToIntConverter.run_tests()
+    TestSolution.run_tests()
