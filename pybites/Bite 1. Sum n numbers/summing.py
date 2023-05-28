@@ -6,3 +6,4 @@ def sum_numbers(numbers: List[int] = None) -> int:
     if numbers is None:
         numbers = default_numbers
     return sum(numbers)
+
