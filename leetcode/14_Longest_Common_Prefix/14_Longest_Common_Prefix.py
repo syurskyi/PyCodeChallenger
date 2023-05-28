@@ -7,10 +7,11 @@ class Solution:
             return ""
 
         prefix = ""
-        for i, char in enumerate(strs[0]):
-            if any(word[i] != char for word in strs[1:]):
+        for chars in zip(*strs):
+            if len(set(chars)) == 1:
+                prefix += chars[0]
+            else:
                 break
-            prefix += char
 
         return prefix
 
