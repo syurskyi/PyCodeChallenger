@@ -1,9 +1,9 @@
 class Solution:
-    def isValid(self, s: str) -> bool:
+    def isValid(self, parentheses_string: str) -> bool:
         stack = []
         mapping = {')': '(', '}': '{', ']': '['}
 
-        for char in s:
+        for char in parentheses_string:
             if char in mapping:
                 if not stack or stack[-1] != mapping[char]:
                     return False
@@ -25,10 +25,10 @@ class TestValidParentheses:
 
         solution = Solution()
 
-        for s, expected in test_cases:
-            result = solution.isValid(s)
+        for parentheses_string, expected in test_cases:
+            result = solution.isValid(parentheses_string)
             assert result == expected, f"Expected: {expected}, Got: {result}"
-            print(f"Input: s='{s}'")
+            print(f"Input: parentheses_string='{parentheses_string}'")
             print("Result:", result)
             print("Expected output:", expected)
             print("Test passed:", result == expected)
