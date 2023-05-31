@@ -10,21 +10,31 @@ class Solution:
         # The twoSum method takes in a list of integers (nums) and a target integer (target).
         # It aims to find two numbers in the list that add up to the target and return their indices in a list.
         seen = defaultdict(int)
+        print('1 - seen:',seen)
         # A defaultdict named seen is created with a default value of 0.
         # This dictionary will be used to store previously seen numbers and their indices.
         for i, num in enumerate(nums):
+            print('2 - i:', i)
+            print('3 - num:', num)
+            print('4 - nums:', enumerate(nums))
             # The method iterates over the nums list using the enumerate function to access both the indices (i)
             # and the corresponding numbers (num).
             complement = target - num
+            print('5 - target:', target)
+            print('6 - num:', num)
+            print('7 - complement:', complement)
             # For each number, the complement is calculated by subtracting it from the target.
             if complement in seen:
+                print('8 - :', [seen[complement], i])
                 return [seen[complement], i]
             # If the complement is present in the seen dictionary, it means that the current number,
             # when combined with a previously seen number, adds up to the target. In this case,
             # the method returns a list containing the indices of the two numbers.
             seen[num] = i
+            print('9 - seen[num]:', seen[num])
             # If the complement is not present in seen,
             # the current number is added to seen with its corresponding index.
+        print('10 - Result:', [])
         return []
     # If no two numbers are found that add up to the target, an empty list is returned.
 
@@ -36,6 +46,7 @@ class TestSolution:
             ([2, 7, 11, 15], 9, [0, 1]),
             ([3, 2, 4], 6, [1, 2]),
             ([3, 3], 6, [0, 1]),
+            ([5, 5, 5, 5, 5, 5, 5, 5, 6, 6], 12, [8, 9]),
         ]
         # A list of test cases is defined. Each test case is a tuple containing the nums list, target value,
         # and the expected output.
