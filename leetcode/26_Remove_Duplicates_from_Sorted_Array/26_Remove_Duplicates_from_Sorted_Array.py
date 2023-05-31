@@ -2,20 +2,24 @@ from typing import List
 
 
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums: list[int]) -> int:
+        """
+        This function removes duplicates from a sorted array and returns the number of unique elements.
+
+        :param nums: a sorted list of integers
+        :return: the number of unique integers
+        """
         if not nums:
             return 0
 
-        k = 1  # Number of unique elements
-        current = 1  # Current index for placing unique elements
+        unique_index = 1
 
-        for i in range(1, len(nums)):
-            if nums[i] != nums[i - 1]:
-                nums[current] = nums[i]
-                k += 1
-                current += 1
+        for current in nums[1:]:
+            if current != nums[unique_index - 1]:
+                nums[unique_index] = current
+                unique_index += 1
 
-        return k
+        return unique_index
 
 
 class TestRemoveDuplicates:
